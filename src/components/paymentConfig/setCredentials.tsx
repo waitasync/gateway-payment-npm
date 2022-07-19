@@ -7,6 +7,6 @@ export interface setCredentialsProps {
   key: String;
 }
 
-export const setCredentials = async (payload: setCredentialsProps) => {
+export const setCredentials = async (payload: Array<setCredentialsProps>) => {
   return await PaymentConfig.setConfig(payload);
 };

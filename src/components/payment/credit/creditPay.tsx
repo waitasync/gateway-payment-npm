@@ -4,6 +4,7 @@ import { TErrorGeneric } from "../../../doman";
 import PaymentCieloService from "../../../services/paymentCieloService";
 
 export interface TCreditPayReq {
+  nameConnection: string;
   MerchantOrderId: String;
   Customer: TCustomer;
   Payment: TPayment;

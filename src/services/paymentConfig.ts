@@ -1,63 +1,85 @@
-import { TPaymentConfigProps } from "../doman";
+import { TErrorGeneric, TPaymentConfigProps } from "../doman";
 
 export default class PaymentConfig {
-  private static id: String;
-  private static key: String;
-  private static urlTransaction: String;
-  private static urlQuery: String;
+  private static connections: Array<TPaymentConfigProps>;
 
-  static async setConfig(payload: TPaymentConfigProps) {
-    try {
-      if (!payload?.urlTransaction) {
+  static async setConfig(payload: Array<TPaymentConfigProps>) {
+    this.connections = [];
+    payload.forEach((connection, c) => {
+      try {
+        if (!connection?.name) {
+          return {
+            err: true,
+            message: "transaction ur was not informed",
+            data: connection,
+          };
+        } else if (!connection?.urlTransaction) {
+          return {
+            err: true,
+            message: "transaction ur was not informed",
+            data: connection,
+          };
+        } else if (!connection?.urlQuery) {
+          return {
+            err: true,
+            message: "query url was not informed",
+            data: connection,
+          };
+        } else if (!connection?.id) {
+          return {
+            err: true,
+            message: "query merchantId was not informed",
+            data: connection,
+          };
+        } else if (!connection?.key) {
+          return {
+            err: true,
+            message: "query merchantId was not informed",
+            data: connection,
+          };
+        }
+
+        this.connections.push(connection);
+      } catch (error: any) {
         return {
           err: true,
-          message: "transaction ur was not informed",
-        };
-      } else if (!payload?.urlQuery) {
-        return {
-          err: true,
-          message: "query url was not informed",
-        };
-      } else if (!payload?.id) {
-        return {
-          err: true,
-          message: "query merchantId was not informed",
-        };
-      } else if (!payload?.key) {
-        return {
-          err: true,
-          message: "query merchantId was not informed",
+          message: error?.message,
+          data: error,
         };
       }
-      this.urlTransaction = payload.urlTransaction;
-      this.urlQuery = payload.urlQuery;
-      this.id = payload.id;
-      this.key = payload.key;
-      return {
-        err: false,
-        message: "success",
-      };
+    });
+  }
+
+  static async getConnection(
+    name: String
+  ): Promise<TPaymentConfigProps | TErrorGeneric> {
+    try {
+      if (!this.connections.length) {
+        return {
+          err: true,
+          message: "no credential configured",
+        };
+      }
+
+      const result: TPaymentConfigProps | undefined =
+        await this.connections.find(
+          (connection: TPaymentConfigProps) => connection.name == name
+        );
+
+      if (!result) {
+        return {
+          err: true,
+          message: "credentials not found",
+        };
+      }
+
+      return result;
     } catch (error: any) {
       return {
         err: true,
         message: error?.message,
+        data: error,
       };
     }
-  }
-
-  static async getUrlTransaction() {
-    return this.urlTransaction;
-  }
-
-  static async getUrlQuery() {
-    return this.urlQuery;
-  }
-
-  static async getId() {
-    return this.id;
-  }
-
-  static async getKey() {
-    return this.key;
   }
 }

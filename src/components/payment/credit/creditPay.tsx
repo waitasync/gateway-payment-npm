@@ -5,15 +5,15 @@ import PaymentCieloService from "../../../services/paymentCieloService";
 
 export interface TCreditPayReq {
   nameConnection: string;
-  MerchantOrderId: String;
-  Customer: TCustomer;
-  Payment: TPayment;
+  merchantOrderId: String;
+  customer: TCustomer;
+  payment: TPayment;
 }
 
 export interface TCreditPayRes {
-  MerchantOrderId: String;
-  Customer: TCustomer;
-  Payment: TPayment;
+  merchantOrderId: String;
+  customer: TCustomer;
+  payment: TPayment;
 }
 
 export async function creditPay(

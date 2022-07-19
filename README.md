@@ -17,6 +17,16 @@ Componente Gerenciador de Pagamentos
 
 # setCredentials
 
+    export interface TCreditPayReq {
+        nameConnection: string;
+        merchantOrderId: String;
+        customer: TCustomer;
+        payment: TPayment;
+    }
+
+    nameConnection = nome da conexao que sera passada para localizar as credenciais
+    nameConnection: string;
+
     - Para configurar as credenciais
     setCredentials(data: setCredentialsProps)
 

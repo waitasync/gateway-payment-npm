@@ -1,0 +1,19 @@
+export type EPropertiesCSS = [
+  "color",
+  "alignItems",
+  "background",
+  "backgroundColor",
+  "borderBottomStyle",
+  "borderBottomColor",
+  "borderBottomWidth",
+  "cursor",
+  "display",
+  "flexDirection",
+  "fontSize",
+  "letterSpacing",
+  "width",
+  "position",
+  "justifyContent",
+  "transition",
+  "textAlign"
+];

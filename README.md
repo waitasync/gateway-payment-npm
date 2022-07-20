@@ -433,3 +433,26 @@ Componente Gerenciador de Pagamentos
         id?: String;
         key?: String;
     };
+
+# ENUMS
+
+# EnumBrand
+
+    export enum EnumBrand {
+        Visa = "Visa",
+        Master = "Master",
+        Amex = "Amex",
+        Elo = "Elo",
+        Aura = "Aura",
+        JCB = "JCB",
+        Diners = "Diners",
+        Discover = "Discover",
+        Hipercard = "Hipercard",
+        Hiper = "Hiper",
+    }
+
+# EnumCountry
+
+    export enum EnumCountry {
+        BRL = "BRL",
+    }

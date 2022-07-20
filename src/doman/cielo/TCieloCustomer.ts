@@ -1,10 +1,10 @@
 import { TCieloAddress } from "./TCieloAddress";
 
 export type TCieloCustomer = {
-  Name: string;
-  Email: string;
-  Birthdate: string; //"1991-01-02";
-  Address: TCieloAddress;
-  DeliveryAddress: TCieloAddress;
-  Billing: TCieloAddress;
+  name?: string;
+  email?: string;
+  birthdate?: string; //"1991-01-02";
+  address: TCieloAddress;
+  deliveryAddress: TCieloAddress;
+  billing: TCieloAddress;
 };

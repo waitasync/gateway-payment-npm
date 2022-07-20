@@ -8,7 +8,10 @@
   },
   "author": "@waitasync",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.27.2",
+    "camelcase-keys": "^8.0.1"
+  },
   "peerDependencies": {
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

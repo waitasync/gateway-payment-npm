@@ -8,7 +8,7 @@ export interface TCardTokenizedAddReq {
 }
 
 export interface TcardTokenizedAddRes {
-  merchantOrderId: String;
+  merchantOrderId: string;
   customer: TCieloCustomer;
   payment: TCieloPayment;
 }

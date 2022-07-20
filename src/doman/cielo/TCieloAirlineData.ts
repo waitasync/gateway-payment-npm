@@ -1,3 +1,3 @@
 export type TCieloAirlineData = {
-  TicketNumber: string; // "AR988983";
+  ticketNumber?: string; // "AR988983";
 };

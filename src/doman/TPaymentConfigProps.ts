@@ -1,12 +1,12 @@
 import { TTypeConnectionEnum } from "./TTypeConnectionEnum";
 
 export type TPaymentConfigProps = {
-  name?: String;
+  name?: string;
   type?: TTypeConnectionEnum;
-  urlTransaction?: String;
-  urlQuery?: String;
-  id?: String;
-  key?: String;
+  urlTransaction?: string;
+  urlQuery?: string;
+  id?: string;
+  key?: string;
   err?: boolean;
   message?: string;
   data?: any;

@@ -5,18 +5,18 @@ import { TCieloAirlineData } from "./TCieloAirlineData";
 import { TCieloCreditCard } from "./TCieloCreditCard";
 
 export type TCieloPayment = {
-  Currency: EnumCieloCurrency;
-  Country: EnumCieloCountry;
-  ServiceTaxAmount: number;
-  Installments: number;
-  Interest: string;
-  Capture: boolean;
-  Authenticate: string;
-  Recurrent: string;
-  SoftDescriptor: string;
-  CreditCard: TCieloCreditCard;
-  IsCryptoCurrencyNegotiation: boolean;
-  Type: EnumCieloTypeTransaction;
-  Amount: number;
-  AirlineData: TCieloAirlineData;
+  type: EnumCieloTypeTransaction;
+  installments: number; // Número de Parcelas.
+  amount: number; // Valor do Pedido (ser enviado em centavos).
+  currency?: EnumCieloCurrency;
+  country?: EnumCieloCountry;
+  serviceTaxAmount?: number;
+  interest?: string;
+  capture: boolean; // Booleano que identifica que a autorização deve ser com captura automática (true) ou captura posterior (false).
+  authenticate?: string;
+  recurrent?: string;
+  softDescriptor?: string;
+  creditCard: TCieloCreditCard;
+  isCryptoCurrencyNegotiation?: boolean;
+  airlineData?: TCieloAirlineData;
 };

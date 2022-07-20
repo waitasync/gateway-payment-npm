@@ -1,10 +1,10 @@
 export type TCieloAddress = {
-  Street: string;
-  Number: string;
-  Complement: string;
-  ZipCode: string;
-  City: string;
-  State: string;
-  Country: string;
-  Neighborhood?: string;
+  street?: string;
+  number?: string;
+  complement?: string;
+  zipCode?: string;
+  city?: string;
+  state?: string;
+  country?: string;
+  neighborhood?: string;
 };

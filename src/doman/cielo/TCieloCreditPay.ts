@@ -2,7 +2,7 @@ import { TCieloCustomer } from "./TCieloCustomer";
 import { TCieloPayment } from "./TCieloPayment";
 
 export type TCieloCreditPay = {
-  merchantOrderId: string;
+  merchantOrderId: string; // is required
   customer: TCieloCustomer;
   payment: TCieloPayment;
 };

@@ -1,9 +1,9 @@
-import { TCard } from "../../doman/cielo";
+import { TCieloCard } from "../../doman/cielo";
 import { CieloBase } from "./cieloBase";
 
 interface TCardTokenizedAddReq {
   nameConnection: string;
-  card: TCard;
+  card: TCieloCard;
 }
 
 export class CieloCardService extends CieloBase {

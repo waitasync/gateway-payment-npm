@@ -1,4 +1,4 @@
 export enum EnumCieloTypeTransaction {
-  CreditCard = "CreditCard",
-  DebitCard = "DebitCard",
+  creditCard = "CreditCard",
+  debitCard = "DebitCard",
 }

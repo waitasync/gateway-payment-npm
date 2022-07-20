@@ -28,7 +28,7 @@ Componente Gerenciador de Pagamentos
 
     export interface TCreditPayReq {
         nameConnection: string;
-        merchantOrderId: String;
+        merchantOrderId: string;
         customer: TCustomer;
         payment: TPayment;
     }
@@ -424,10 +424,10 @@ Componente Gerenciador de Pagamentos
 ## TCard
 
     export type TCard = {
-        CustomerName: String;
-        CardNumber: String;
-        Holder: String;
-        ExpirationDate: String;
+        CustomerName: string;
+        CardNumber: string;
+        Holder: string;
+        ExpirationDate: string;
         Brand: EnumBrand;
     };
 
@@ -436,12 +436,12 @@ Componente Gerenciador de Pagamentos
 # TPaymentConfigProps
 
     export type TPaymentConfigProps = {
-        name: String;
+        name: string;
         type: TTypeConnectionEnum;
-        urlTransaction?: String;
-        urlQuery?: String;
-        id?: String;
-        key?: String;
+        urlTransaction?: string;
+        urlQuery?: string;
+        id?: string;
+        key?: string;
     };
 
 # ENUMS

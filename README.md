@@ -253,58 +253,161 @@ Componente Gerenciador de Pagamentos
     50
     Não	Cidade do endereço do Comprador.
 
-## Customer.DeliveryAddress.State Texto 2 Não Estado do endereço do Comprador.
+## Customer.DeliveryAddress.State
 
-## Customer.DeliveryAddress.Country Texto 35 Não País do endereço do Comprador.
+    Texto
+    2
+    Não Estado do endereço do Comprador.
 
-## Payment.Type Texto 100 Sim Tipo do Meio de Pagamento.
+## Customer.DeliveryAddress.Country
 
-## Payment.Amount Número 15 Sim Valor do Pedido (ser enviado em centavos).
+    Texto
+    35
+    Não
+    País do endereço do Comprador.
 
-## Payment.Currency Texto 3 Não Moeda na qual o pagamento será feito (BRL).
+## Payment.Type
 
-## Payment.Country Texto 3 Não Pais na qual o pagamento será feito.
+    Texto
+    100
+    Sim
+    Tipo do Meio de Pagamento.
 
-## Payment.Provider Texto 15 — Define comportamento do meio de pagamento (ver Anexo)/NÃO OBRIGATÓRIO ## PARA CRÉDITO.
+## Payment.Amount
 
-## Payment.ServiceTaxAmount Número 15 Não Aplicável apenas para empresas aéreas. Montante do valor da ## autorização que deve ser destinado à taxa de serviço. Obs.: Esse valor não é adicionado ao valor da ## autorização.
+    Número
+    15
+    Sim
+    Valor do Pedido (ser enviado em centavos).
 
-## Payment.SoftDescriptor Texto 13 Não O complemento do nome da loja que aparecerá na fatura do ## cartão. Não permite caracteres especiais.
+## Payment.Currency
 
-## Payment.Installments Número 2 Sim Número de Parcelas.
+    Texto
+    3
+    Não Moeda na qual o pagamento será feito (BRL).
 
-## Payment.Interest Texto 10 Não Tipo de parcelamento - Loja (ByMerchant) ou Cartão (ByIssuer).
+## Payment.Country
 
-## Payment.Capture Booleano — Não (Default false) Booleano que identifica que a autorização deve ser com captura automática.
+    Texto
+    3
+    Não Pais na qual o pagamento será feito.
 
-## Payment.Authenticate Booleano — Não (Default false) Define se o comprador será direcionado ao Banco emissor para autenticação do cartão
+## Payment.Provider
 
-## Payment.Recurrent Booleano - Não Indica se a transação é do tipo recorrente (“true”) ou não (“false”). O valor “true” não originará uma nova recorrência, apenas permitirá a realização de uma transação sem a necessidade de envio do CVV. Authenticate deve ser “false” quando Recurrent é “true”.
+    Texto
+    15
+    —
+    Define comportamento do meio de pagamento (ver Anexo)/NÃO OBRIGATÓRIO ## PARA CRÉDITO.
 
-## Payment.IsCryptocurrencyNegotiation Booleano - Não (default false) Deve ser enviado com valor “true” caso se trate de uma transação de compra ou venda de Criptomoeda
+## Payment.ServiceTaxAmount
 
-## Payment.AirlineData.TicketNumber alfanumérico 13 Não Informar o número do principal bilhete aéreo da transação.
+    Número
+    15
+    Não Aplicável apenas para empresas aéreas. Montante do valor da ## autorização que deve ser destinado à taxa de serviço. Obs.: Esse valor não é adicionado ao valor da ## autorização.
 
-## CreditCard.CardNumber Texto 19 Sim Número do Cartão do Comprador.
+## Payment.SoftDescriptor
 
-## CreditCard.Holder Texto 25 Não Nome do Comprador impresso no cartão. Não aceita caracteres especiais ou acentuação.
+    Texto
+    13
+    Não
+    O complemento do nome da loja que aparecerá na fatura do ## cartão. Não permite caracteres especiais.
 
-## CreditCard.ExpirationDate Texto 7 Sim Data de validade impressa no cartão. Ex. MM/AAAA.
+## Payment.Installments
 
-## CreditCard.SecurityCode Texto 4 Não Código de segurança impresso no verso do cartão.
+    Número
+    2
+    Sim
+    Número de Parcelas.
 
-## CreditCard.SaveCard Booleano — Não (Default false) Booleano que identifica se o cartão será salvo para gerar o CardToken.
+## Payment.Interest
 
-## CreditCard.Brand Texto 10 Sim Bandeira do cartão. Valores possíveis: Visa / Master / Amex / Elo / Aura / JCB / Diners / Discover / Hipercard / Hiper.
+    Texto
+    10
+    Não
+    Tipo de parcelamento - Loja (ByMerchant) ou Cartão (ByIssuer).
 
-## CreditCard.CardOnFile.Usage Texto - Não First se o cartão foi armazenado e é seu primeiro uso.
+## Payment.Capture
 
-Used se o cartão foi armazenado e ele já foi utilizado anteriormente em outra transação
+    Booleano
+    —
+    Não (Default false) Booleano que identifica que a autorização deve ser com captura automática.
 
-## CreditCard.CardOnFile.Reason Texto - Condicional Indica o propósito de armazenamento de cartões, caso o campo “Usage” for “Used”.
+## Payment.Authenticate Booleano
 
-## Recurring - Compra recorrente programada (ex. assinaturas)
+    —
+    Não (Default false)
+    Define se o comprador será direcionado ao Banco emissor para autenticação do cartão
 
-## Unscheduled - Compra recorrente sem agendamento (ex. aplicativos de serviços)
+## Payment.Recurrent Booleano
 
-## Installments - Parcelamento através da recorrência.
+    -
+    Não Indica se a transação é do tipo recorrente (“true”) ou não (“false”). O valor “true” não originará uma nova recorrência, apenas permitirá a realização de uma transação sem a necessidade de envio do CVV. Authenticate deve ser “false” quando Recurrent é “true”.
+
+## Payment.IsCryptocurrencyNegotiation
+
+    Booleano
+    -
+    Não (default false)
+    Deve ser enviado com valor “true” caso se trate de uma transação de compra ou venda de Criptomoeda
+
+## Payment.AirlineData.TicketNumber
+
+    alfanumérico
+    13
+    Não Informar o número do principal bilhete aéreo da transação.
+
+## CreditCard.CardNumber
+
+    Texto
+    19
+    Sim
+    Número do Cartão do Comprador.
+
+## CreditCard.Holder
+
+    Texto
+    25
+    Não
+    Nome do Comprador impresso no cartão. Não aceita caracteres especiais ou acentuação.
+
+## CreditCard.ExpirationDate
+
+    Texto
+    7
+    Sim
+    Data de validade impressa no cartão. Ex. MM/AAAA.
+
+## CreditCard.SecurityCode
+
+    Texto
+    4
+    Não Código de segurança impresso no verso do cartão.
+
+## CreditCard.SaveCard
+
+    Booleano
+    —
+    Não (Default false)
+    Booleano que identifica se o cartão será salvo para gerar o CardToken.
+
+## CreditCard.Brand
+
+    Texto
+    10
+    Sim
+    Bandeira do cartão. Valores possíveis: Visa / Master / Amex / Elo / Aura / JCB / Diners / Discover / Hipercard / Hiper.
+
+## CreditCard.CardOnFile.Usage
+
+    Texto
+    -
+    Não
+    First se o cartão foi armazenado e é seu primeiro uso. Used se o cartão foi armazenado e ele já foi utilizado anteriormente em outra transação
+
+## CreditCard.CardOnFile.Reason
+
+    Texto
+    -
+    Condicional Indica o propósito de armazenamento de cartões, caso o campo “Usage” for “Used”. Recurring - Compra recorrente programada (ex. assinaturas),
+    * Unscheduled - Compra recorrente sem agendamento (ex. aplicativos de serviços)
+    * Installments - Parcelamento através da recorrência.

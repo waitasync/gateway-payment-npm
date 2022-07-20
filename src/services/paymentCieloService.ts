@@ -1,8 +1,9 @@
+import { TPaymentConfigProps } from "../doman";
 import { TCreditPayProps } from "../doman/cielo/TCreditPayProps";
 import { TErrorGeneric } from "../doman/TErrorGeneric";
 
-export default class PaymentCieloService {
-  public paymentCielo() {}
+export class PaymentCieloService {
+  constructor(paymentConfig: TPaymentConfigProps) {}
 
   payNow(payload: TCreditPayProps): TErrorGeneric {
     return { message: "teste" };

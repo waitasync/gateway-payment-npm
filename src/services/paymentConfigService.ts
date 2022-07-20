@@ -1,6 +1,6 @@
 import { TErrorGeneric, TPaymentConfigProps } from "../doman";
 
-export default class PaymentConfig {
+export class PaymentConfigService {
   private static connections: Array<TPaymentConfigProps>;
 
   static async setConfig(payload: Array<TPaymentConfigProps>) {

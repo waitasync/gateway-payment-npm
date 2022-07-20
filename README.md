@@ -456,3 +456,15 @@ Componente Gerenciador de Pagamentos
     export enum EnumCountry {
         BRL = "BRL",
     }
+
+# EnumCurrency
+
+    export enum EnumCurrency {
+        BRL = "BRL",
+    }
+
+# EnumTypeTransaction
+
+    export enum EnumTypeTransaction {
+        CreditCard = "CreditCard",
+    }

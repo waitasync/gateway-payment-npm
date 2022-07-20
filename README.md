@@ -2,6 +2,15 @@
 
 Componente Gerenciador de Pagamentos
 
+# Mapa
+
+    - gateway
+        - setCredentials
+        - creditPay
+        - creditRefund
+        - debitPay
+        - debitRefund
+
 # import lib
 
         import {
@@ -411,3 +420,16 @@ Componente Gerenciador de Pagamentos
     Condicional Indica o propósito de armazenamento de cartões, caso o campo “Usage” for “Used”. Recurring - Compra recorrente programada (ex. assinaturas),
     * Unscheduled - Compra recorrente sem agendamento (ex. aplicativos de serviços)
     * Installments - Parcelamento através da recorrência.
+
+# TIPOS
+
+# TPaymentConfigProps
+
+    export type TPaymentConfigProps = {
+        name: String;
+        type: TTypeConnectionEnum;
+        urlTransaction?: String;
+        urlQuery?: String;
+        id?: String;
+        key?: String;
+    };

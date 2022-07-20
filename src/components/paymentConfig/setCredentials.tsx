@@ -1,14 +1,8 @@
-import { TTypeConnectionEnum } from "../../doman/TTypeConnectionEnum";
+import { TCredentials } from "../../doman";
 import { PaymentConfigService } from "../../services";
-export interface setCredentialsProps {
-  name: String;
-  type: TTypeConnectionEnum;
-  urlTransaction?: String;
-  urlQuery?: String;
-  id?: String;
-  key?: String;
-}
 
-export const setCredentials = async (payload: Array<setCredentialsProps>) => {
+export { TCredentials };
+
+export const setCredentials = async (payload: Array<TCredentials>) => {
   return await PaymentConfigService.setConfig(payload);
 };

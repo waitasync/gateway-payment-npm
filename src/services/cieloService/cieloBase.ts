@@ -2,14 +2,14 @@ import {
   IHttpRequestOptions,
   TCieloCreditPay,
   TErrorGeneric,
-  TPaymentConfigProps,
+  TCredentials,
 } from "../../doman";
 import { PaymentConfigService } from "../paymentConfigService";
 import httpAxios from "../../services/http.axios";
 import { EnumMethodHttp } from "../../doman/enums/EnumMethodHttp";
 
 export class CieloBase {
-  paymentConfig?: TPaymentConfigProps;
+  paymentConfig?: TCredentials;
   errorMessageConnection: string | undefined;
 
   public async checkConnection(name: string) {

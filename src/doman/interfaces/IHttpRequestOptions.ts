@@ -1,5 +1,4 @@
 import { EnumMethodHttp } from "../enums/EnumMethodHttp";
-import { AxiosRequestHeaders } from "axios";
 
 export type IHttpRequestOptions = {
   method: EnumMethodHttp;

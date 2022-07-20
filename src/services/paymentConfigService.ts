@@ -1,9 +1,9 @@
-import { TErrorGeneric, TPaymentConfigProps } from "../doman";
+import { TErrorGeneric, TCredentials } from "../doman";
 
 export class PaymentConfigService {
-  private static connections: Array<TPaymentConfigProps>;
+  private static connections: Array<TCredentials>;
 
-  static async setConfig(payload: Array<TPaymentConfigProps>) {
+  static async setConfig(payload: Array<TCredentials>) {
     this.connections = [];
     payload.forEach((connection, c) => {
       try {
@@ -50,13 +50,13 @@ export class PaymentConfigService {
     });
   }
 
-  static async getConnection(name: String): Promise<TPaymentConfigProps> {
+  static async getConnection(name: String): Promise<TCredentials> {
     if (!this.connections.length) {
       throw new Error("no credential configured");
     }
 
-    const result: TPaymentConfigProps | undefined = await this.connections.find(
-      (connection: TPaymentConfigProps) => connection.name == name
+    const result: TCredentials | undefined = await this.connections.find(
+      (connection: TCredentials) => connection.name == name
     );
 
     if (!result) {

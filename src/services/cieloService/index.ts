@@ -1,9 +1,9 @@
-import { TErrorGeneric, TPaymentConfigProps } from "../../doman";
+import { TErrorGeneric, TCredentials } from "../../doman";
 import { CieloCardService } from "./cieloCardService";
 import { CieloCreditService } from "./cieloCreditService";
 
 export class CieloService {
-  paymentConfig: Promise<TPaymentConfigProps | TErrorGeneric> | undefined;
+  paymentConfig: Promise<TCredentials | TErrorGeneric> | undefined;
   card: CieloCardService;
   credit: CieloCreditService;
 

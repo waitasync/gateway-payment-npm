@@ -2,9 +2,9 @@ import {
   TCieloCreditPay,
   TCieloCustomer,
   TCieloPayment,
-  TPaymentConfigProps,
+  TCredentials,
 } from "../../../doman";
-import { TErrorGeneric } from "../../../doman";
+
 import { TTypeConnectionEnum } from "../../../doman/TTypeConnectionEnum";
 import { PaymentConfigService } from "../../../services";
 import { CieloService } from "../../../services/cieloService";
@@ -21,8 +21,9 @@ export interface TCreditPayRes {
 }
 
 export async function creditPay(payload: TCreditPayReq) {
-  const paymentConfig: TPaymentConfigProps =
-    await PaymentConfigService.getConnection(payload.nameConnection);
+  const paymentConfig: TCredentials = await PaymentConfigService.getConnection(
+    payload.nameConnection
+  );
 
   if (paymentConfig.type == TTypeConnectionEnum.Cielo) {
     const paymentCieloService = new CieloService();

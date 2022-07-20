@@ -1,6 +1,6 @@
 import { TTypeConnectionEnum } from "./TTypeConnectionEnum";
 
-export type TPaymentConfigProps = {
+export type TCredentials = {
   name?: string;
   type?: TTypeConnectionEnum;
   urlTransaction?: string;

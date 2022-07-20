@@ -1,2 +1,2 @@
 export * from "./paymentConfigService";
-export * from "./paymentCieloService";
+export * from "./cieloService";

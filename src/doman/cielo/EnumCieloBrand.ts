@@ -1,4 +1,4 @@
-export enum EnumBrand {
+export enum EnumCieloBrand {
   Visa = "Visa",
   Master = "Master",
   Amex = "Amex",

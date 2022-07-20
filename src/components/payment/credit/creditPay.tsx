@@ -1,33 +1,21 @@
-import { TCustomer } from "../../../doman/cielo/TCustomer";
-import { TPayment } from "../../../doman/cielo/TPayment";
-import { TErrorGeneric, TPaymentConfigProps } from "../../../doman";
-import { PaymentConfigService, PaymentCieloService } from "../../../services";
+import { TCieloCreditPay, TCieloCustomer, TCieloPayment } from "../../../doman";
+import { TErrorGeneric } from "../../../doman";
+import { CieloService } from "../../../services/cieloService";
 
 export interface TCreditPayReq {
   nameConnection: string;
-  merchantOrderId: String;
-  customer: TCustomer;
-  payment: TPayment;
+  data: TCieloCreditPay;
 }
 
 export interface TCreditPayRes {
-  merchantOrderId: String;
-  customer: TCustomer;
-  payment: TPayment;
+  merchantOrderId: string;
+  customer: TCieloCustomer;
+  payment: TCieloPayment;
 }
 
 export async function creditPay(
-  requestData: TCreditPayReq
+  payload: TCreditPayReq
 ): Promise<TCreditPayRes | TErrorGeneric> {
-  const resPaymentConfig: any = await PaymentConfigService.getConnection(
-    requestData?.nameConnection
-  );
-
-  if (resPaymentConfig?.err) {
-    return resPaymentConfig;
-  }
-
-  const PaymentConfigProps: TPaymentConfigProps = resPaymentConfig;
-  const paymentCieloService = new PaymentCieloService(PaymentConfigProps);
-  return await paymentCieloService.payNow(requestData);
+  const paymentCieloService = new CieloService();
+  return paymentCieloService.credit.payNow(payload);
 }

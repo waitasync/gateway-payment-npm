@@ -50,9 +50,7 @@ export class PaymentConfigService {
     });
   }
 
-  static async getConnection(
-    name: String
-  ): Promise<TPaymentConfigProps | TErrorGeneric> {
+  static async getConnection(name: String) {
     try {
       if (!this.connections.length) {
         return {

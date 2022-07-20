@@ -421,6 +421,16 @@ Componente Gerenciador de Pagamentos
     * Unscheduled - Compra recorrente sem agendamento (ex. aplicativos de serviços)
     * Installments - Parcelamento através da recorrência.
 
+## TCard
+
+    export type TCard = {
+        CustomerName: String;
+        CardNumber: String;
+        Holder: String;
+        ExpirationDate: String;
+        Brand: EnumBrand;
+    };
+
 # TIPOS
 
 # TPaymentConfigProps

@@ -467,4 +467,5 @@ Componente Gerenciador de Pagamentos
 
     export enum EnumTypeTransaction {
         CreditCard = "CreditCard",
+        DebitCard = "DebitCard",
     }

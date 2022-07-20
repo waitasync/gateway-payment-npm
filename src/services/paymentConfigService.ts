@@ -50,34 +50,19 @@ export class PaymentConfigService {
     });
   }
 
-  static async getConnection(name: String) {
-    try {
-      if (!this.connections.length) {
-        return {
-          err: true,
-          message: "no credential configured",
-        };
-      }
-
-      const result: TPaymentConfigProps | undefined =
-        await this.connections.find(
-          (connection: TPaymentConfigProps) => connection.name == name
-        );
-
-      if (!result) {
-        return {
-          err: true,
-          message: "credentials not found",
-        };
-      }
-
-      return result;
-    } catch (error: any) {
-      return {
-        err: true,
-        message: error?.message,
-        data: error,
-      };
+  static async getConnection(name: String): Promise<TPaymentConfigProps> {
+    if (!this.connections.length) {
+      throw new Error("no credential configured");
     }
+
+    const result: TPaymentConfigProps | undefined = await this.connections.find(
+      (connection: TPaymentConfigProps) => connection.name == name
+    );
+
+    if (!result) {
+      throw new Error("credentials not found");
+    }
+
+    return result;
   }
 }

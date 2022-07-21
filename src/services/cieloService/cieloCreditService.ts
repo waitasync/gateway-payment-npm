@@ -97,7 +97,6 @@ export class CieloCreditService extends CieloBase {
   }
 
   async checkedByPaymentId(payload: TCheckedByPaymentId) {
-    console.log("checkedByPaymentId", payload);
     const connection = await this.checkConnection(payload.nameConnection);
 
     if (!connection) {
@@ -107,8 +106,6 @@ export class CieloCreditService extends CieloBase {
     const response = await this.get<any | TErrorGeneric>({
       path: `1/sales/${payload.paymentId}`,
     });
-
-    console.log("checkedByPaymentId.response", response);
 
     return await this.prepareReturn(response);
   }

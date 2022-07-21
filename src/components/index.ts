@@ -1,2 +1,2 @@
-export * from "./payment";
+// export * from "./payment";
 export * from "./paymentConfig";

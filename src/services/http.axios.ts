@@ -1,4 +1,4 @@
-import axios, { AxiosRequestHeaders, AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 import camelcaseKeys from "camelcase-keys";
 import { IHttpRequestOptions, TErrorGeneric } from "../doman";
 import { EnumMethodHttp } from "../doman/enums/EnumMethodHttp";

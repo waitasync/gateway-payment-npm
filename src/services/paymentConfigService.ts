@@ -1,4 +1,4 @@
-import { TErrorGeneric, TCredentials } from "../doman";
+import { TCredentials } from "../doman";
 
 export class PaymentConfigService {
   private static connections: Array<TCredentials>;
@@ -55,7 +55,7 @@ export class PaymentConfigService {
       throw new Error("no credential configured");
     }
 
-    const result: TCredentials | undefined = await this.connections.find(
+    const result: TCredentials | undefined = this.connections.find(
       (connection: TCredentials) => connection.name == name
     );
 

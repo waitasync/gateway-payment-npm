@@ -53,34 +53,34 @@ export class CieloBase {
     return await httpAxios({ data, options });
   }
 
-  public async get<R>(params: {
-    path: string;
-    notContentType?: boolean;
-  }): Promise<R | TErrorGeneric> {
-    const hostname: String | any = this.paymentConfig?.urlQuery;
-    const { path, notContentType } = params;
-    const method = EnumMethodHttp.GET;
-    const options: IHttpRequestOptions = this.getHttpRequestOptions({
-      path,
-      hostname,
-      method,
-      notContentType: notContentType || false,
-    });
+  // public async get<R>(params: {
+  //   path: string;
+  //   notContentType?: boolean;
+  // }): Promise<R | TErrorGeneric> {
+  //   const hostname: String | any = this.paymentConfig?.urlQuery;
+  //   const { path, notContentType } = params;
+  //   const method = EnumMethodHttp.GET;
+  //   const options: IHttpRequestOptions = this.getHttpRequestOptions({
+  //     path,
+  //     hostname,
+  //     method,
+  //     notContentType: notContentType || false,
+  //   });
 
-    return await httpAxios({ options });
-  }
+  //   return await httpAxios({ options });
+  // }
 
-  public async put<D, R>(
-    params: { path: string },
-    data?: D
-  ): Promise<R | TErrorGeneric> {
-    const { path } = params;
-    const hostname: String | any = this.paymentConfig?.urlQuery;
-    const options: IHttpRequestOptions = this.getHttpRequestOptions({
-      method: EnumMethodHttp.PUT,
-      path,
-      hostname,
-    });
-    return await httpAxios({ data, options });
-  }
+  // public async put<D, R>(
+  //   params: { path: string },
+  //   data?: D
+  // ): Promise<R | TErrorGeneric> {
+  //   const { path } = params;
+  //   const hostname: String | any = this.paymentConfig?.urlQuery;
+  //   const options: IHttpRequestOptions = this.getHttpRequestOptions({
+  //     method: EnumMethodHttp.PUT,
+  //     path,
+  //     hostname,
+  //   });
+  //   return await httpAxios({ data, options });
+  // }
 }

@@ -488,7 +488,7 @@ Componente Gerenciador de Pagamentos
 
 # Pagamento com Cartao de credito :: Sucesso
 
-    ![image](https://user-images.githubusercontent.com/109619340/180288120-7c6305a2-f910-4df7-8df5-ccc7aa3527d0.png)
+![image](https://user-images.githubusercontent.com/109619340/180288120-7c6305a2-f910-4df7-8df5-ccc7aa3527d0.png)
 
 Consulta pelo paymentId :: Sucesso
 

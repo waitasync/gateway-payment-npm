@@ -490,11 +490,11 @@ Componente Gerenciador de Pagamentos
 
 ![image](https://user-images.githubusercontent.com/109619340/180288120-7c6305a2-f910-4df7-8df5-ccc7aa3527d0.png)
 
-Consulta pelo paymentId :: Sucesso
+# Consulta pelo paymentId :: Sucesso
 
 ![image](https://user-images.githubusercontent.com/109619340/180287942-b2063b14-9490-498f-9b68-7cd1fab841d9.png)
 
-Consulta pelo paymentId :: Falha ou Não localizado
+# Consulta pelo paymentId :: Falha ou Não localizado
 
 ![image](https://user-images.githubusercontent.com/109619340/180288049-d7e2c838-7053-4191-885e-1de3b6d20b35.png)
 

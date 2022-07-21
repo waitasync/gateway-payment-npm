@@ -7,6 +7,6 @@ export type TCieloCreditCard = {
   securityCode: number; // is required
   saveCard: boolean; // Booleano que identifica se o cartão será salvo para gerar o CardToken.
   brand: EnumCieloBrand; // is required
-  cardOnFile: TCieloCardOnFile;
+  cardOnFile?: TCieloCardOnFile;
   holder?: string;
 };

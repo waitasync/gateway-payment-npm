@@ -15,23 +15,34 @@ export interface TCreditPayReq {
 }
 
 export interface TCreditPayRes {
-  merchantOrderId: string;
+  merchantOrderId: string; // Numero de identificação do Pedido.
   customer: TCieloCustomer;
   payment: TCieloPayment;
 }
 
 export async function creditPay(payload: TCreditPayReq) {
-  const paymentConfig: TCredentials = await PaymentConfigService.getConnection(
-    payload.nameConnection
-  );
+  try {
+    const paymentConfig: TCredentials =
+      await PaymentConfigService.getConnection(payload.nameConnection);
 
-  if (paymentConfig.type == TTypeConnectionEnum.Cielo) {
-    const paymentCieloService = new CieloService();
-    return paymentCieloService.credit.payNow(payload);
+    if (paymentConfig.type == TTypeConnectionEnum.Cielo) {
+      if (!payload.data.payment?.capture) {
+        payload.data.payment.capture = true;
+      }
+
+      const amount = Number(payload.data.payment.amount) * 100;
+      payload.data.payment.amount = amount;
+
+      console.log(777, "cielo", payload);
+      const paymentCieloService = new CieloService();
+      return paymentCieloService.credit.payNow(payload);
+    }
+
+    return {
+      err: true,
+      message: "undefined",
+    };
+  } catch (error) {
+    console.log(444, error);
   }
-
-  return {
-    err: true,
-    message: "undefined",
-  };
 }

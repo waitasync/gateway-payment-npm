@@ -4,9 +4,13 @@ export type IHttpRequestOptions = {
   method: EnumMethodHttp;
   path: string;
   hostname: string;
-  encoding: string;
-  port: number;
+  encoding?: string;
+  port?: number;
   timeout?: number;
-  headers?: any;
+  headers?: {
+    merchantId: string;
+    merchantKey: string;
+    [x: string]: any;
+  };
   [x: string]: any;
 };

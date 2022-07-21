@@ -312,7 +312,8 @@ Componente Gerenciador de Pagamentos
 
     Número
     15
-    Não Aplicável apenas para empresas aéreas. Montante do valor da ## autorização que deve ser destinado à taxa de serviço. Obs.: Esse valor não é adicionado ao valor da ## autorização.
+    Não
+    Aplicável apenas para empresas aéreas. Montante do valor da ## autorização que deve ser destinado à taxa de serviço. Obs.: Esse valor não é adicionado ao valor da ## autorização.
 
 ## Payment.SoftDescriptor
 
@@ -350,7 +351,8 @@ Componente Gerenciador de Pagamentos
 ## Payment.Recurrent Booleano
 
     -
-    Não Indica se a transação é do tipo recorrente (“true”) ou não (“false”). O valor “true” não originará uma nova recorrência, apenas permitirá a realização de uma transação sem a necessidade de envio do CVV. Authenticate deve ser “false” quando Recurrent é “true”.
+    Não
+    Indica se a transação é do tipo recorrente (“true”) ou não (“false”). O valor “true” não originará uma nova recorrência, apenas permitirá a realização de uma transação sem a necessidade de envio do CVV. Authenticate deve ser “false” quando Recurrent é “true”.
 
 ## Payment.IsCryptocurrencyNegotiation
 
@@ -363,7 +365,8 @@ Componente Gerenciador de Pagamentos
 
     alfanumérico
     13
-    Não Informar o número do principal bilhete aéreo da transação.
+    Não
+    Informar o número do principal bilhete aéreo da transação.
 
 ## CreditCard.CardNumber
 

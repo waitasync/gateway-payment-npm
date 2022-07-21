@@ -16,15 +16,16 @@ export default async function ({
     let response;
     const url = `${options.hostname}/${options.path}`;
 
+    console.log(777, url, data);
     const dataPost =
-      data ||
+      data &&
       JSON.stringify(data)
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "");
 
     if (options.method == EnumMethodHttp.PUT) {
-      if (options?.headers)
-        options.headers["Content-Length"] = Buffer.byteLength(dataPost);
+      // if (options?.headers)
+      //   options.headers["Content-Length"] = Buffer.byteLength(dataPost);
 
       response = await axios.put(url, dataPost, {
         timeout,
@@ -36,8 +37,8 @@ export default async function ({
         headers: options.headers,
       });
     } else if (options.method == EnumMethodHttp.POST) {
-      if (options?.headers)
-        options.headers["Content-Length"] = Buffer.byteLength(dataPost);
+      // if (options?.headers)
+      //   options.headers["Content-Length"] = Buffer.byteLength(dataPost);
 
       response = await axios.post(url, dataPost, {
         timeout,
@@ -70,7 +71,7 @@ export default async function ({
       data: dataReturn,
     };
   } catch (error: any) {
-    console.log(error?.response);
+    console.log(1111, error);
     return {
       err: true,
       data: {

@@ -4,4 +4,5 @@ export type TErrorGeneric = {
   name?: string;
   stack?: string;
   data?: any;
+  status?: number;
 };

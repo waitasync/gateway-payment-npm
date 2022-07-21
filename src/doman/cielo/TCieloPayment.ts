@@ -12,7 +12,7 @@ export type TCieloPayment = {
   country?: EnumCieloCountry;
   serviceTaxAmount?: number;
   interest?: string;
-  capture: boolean; // Booleano que identifica que a autorização deve ser com captura automática (true) ou captura posterior (false).
+  capture?: boolean; // Booleano que identifica que a autorização deve ser com captura automática (true) ou captura posterior (false).
   authenticate?: string;
   recurrent?: string;
   softDescriptor?: string;

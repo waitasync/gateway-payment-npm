@@ -1,19 +1,47 @@
-import { TCieloCard, TCieloCustomer, TCieloPayment } from "../../../doman";
-// import { TErrorGeneric } from "../../../doman";
-// import { CieloService } from "../../../services/cieloService";
+import {
+  TCieloCard,
+  TCieloCreditCard,
+  TCredentials,
+  TTypeConnectionEnum,
+} from "../../../doman";
+import { CieloService, PaymentConfigService } from "../../../services";
 
 export interface TCardTokenizedAddReq {
   nameConnection: string;
-  card: TCieloCard;
+  data: TCieloCard;
 }
 
 export interface TcardTokenizedAddRes {
   merchantOrderId: string;
-  customer: TCieloCustomer;
-  payment: TCieloPayment;
+  card: TCieloCreditCard;
 }
 
 export async function cardTokenizedAdd(payload: TCardTokenizedAddReq) {
-  // const paymentCieloService = new CieloService();
-  // return await paymentCieloService.card.add(payload);
+  try {
+    const paymentConfig: TCredentials =
+      await PaymentConfigService.getConnection(payload.nameConnection);
+
+    switch (paymentConfig.type) {
+      case TTypeConnectionEnum.Cielo:
+        const paymentCieloService = new CieloService();
+        return paymentCieloService.card.add({
+          ...payload,
+          card: {
+            customerName: payload.data?.customerName,
+            cardNumber: payload.data?.cardNumber,
+            expirationDate: payload.data?.expirationDate,
+            brand: payload.data?.brand,
+            holder: payload.data?.holder,
+          },
+        });
+
+      default:
+        return {
+          err: true,
+          message: "undefined",
+        };
+    }
+  } catch (error) {
+    console.log(444, error);
+  }
 }

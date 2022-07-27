@@ -2,11 +2,11 @@ import { EnumMethodHttp } from "../enums/EnumMethodHttp";
 import { EnumCieloBrand } from "./EnumCieloBrand";
 
 export type TCieloCard = {
-  CustomerName: string;
-  CardNumber: string;
-  Holder: string;
-  ExpirationDate: string;
-  Brand: EnumCieloBrand;
+  customerName: string;
+  cardNumber: string;
+  holder: string;
+  expirationDate: string;
+  brand: EnumCieloBrand;
 };
 
 export type TCieloCardResponse = {

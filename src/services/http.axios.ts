@@ -26,11 +26,30 @@ export default async function ({
     if (options.method == EnumMethodHttp.PUT) {
       // if (options?.headers)
       //   options.headers["Content-Length"] = Buffer.byteLength(dataPost);
-
-      response = await axios.put(url, dataPost, {
-        timeout,
-        headers: options.headers,
-      });
+      try {
+        response = await axios.put(url, dataPost, {
+          timeout,
+          headers: options.headers,
+        });
+      } catch (error: any) {
+        if ([400].includes(error?.response?.status)) {
+          console.log(888, error?.response.data);
+          return {
+            err: true,
+            data: {
+              status: error?.response?.status,
+              message: error?.response?.statusText || "unexpected error",
+              ...(Array(error?.response.data)
+                ? {
+                    returnCode: error?.response.data[0].Code,
+                    returnMessage: error?.response?.data[0].Message,
+                    ...error?.response.data[0],
+                  }
+                : error?.response.data),
+            },
+          };
+        }
+      }
     } else if (options.method == EnumMethodHttp.GET) {
       response = await axios.get(url, {
         timeout,

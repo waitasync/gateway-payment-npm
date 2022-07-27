@@ -32,8 +32,6 @@ export async function creditPay(payload: TCreditPayReq) {
 
       const amount = Number(payload.data.payment.amount) * 100;
       payload.data.payment.amount = amount;
-
-      console.log(777, "cielo", payload);
       const paymentCieloService = new CieloService();
       return paymentCieloService.credit.payNow(payload);
     }
